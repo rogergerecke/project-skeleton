@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  db:
+    container_name: lose24com
+    image: mysql:5.7
+    # Set the mysql vars in the local env file ect. MYSQL_ROOT_PASSWORD
+    env_file:
+      - .env.local
+    ports:
+      - "3306:3306"
+    volumes:
+      - ../Docker/mysql/mycustom.cnf:/etc/mysql/conf.d/custom.cnf
